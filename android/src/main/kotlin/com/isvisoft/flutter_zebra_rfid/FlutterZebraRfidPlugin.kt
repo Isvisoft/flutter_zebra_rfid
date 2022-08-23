@@ -17,15 +17,21 @@ class FlutterZebraRfidPlugin : FlutterPlugin, MethodCallHandler,
   private lateinit var rfidHandler: RFIDHandler
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_zebra_rfid")
-    channel.setMethodCallHandler(this)
 
     rfidHandler = RFIDHandler()
     rfidHandler.onCreate(this, flutterPluginBinding.applicationContext)
+
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_zebra_rfid")
+    channel.setMethodCallHandler(this)
+
+
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
+      Log.d("8888","getPlatformVersion")
+      println("8888")
+      println("getPlatformVersion")
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else {
       result.notImplemented()
