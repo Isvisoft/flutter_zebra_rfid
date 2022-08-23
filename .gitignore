@@ -4,6 +4,7 @@
 *.pyc
 *.swp
 .DS_Store
+.gradle
 .atom/
 .buildlog/
 .history
@@ -15,6 +16,10 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
+gradlew
+gradlew.bat
+gradle/
+local.properties
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
